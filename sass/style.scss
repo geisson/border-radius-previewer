@@ -1,11 +1,28 @@
 @import url(reset.scss);
-// @import url(normalize.scss);
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+$color-primary: #d9534f;
+$color-secondary: #ffad60;
+$color-tertiary: #96ceb4;
+$color-quaternary: #ffeead;
+
+$padding-base: 1rem;
+$margin-base: 1rem;
+
+$font-size: 16px;
+$font-family: 'Share Tech Mono';
+
+$border-radius: 1rem;
+
+body {
+  font-size: $font-size;
+  font-family: $font-family;
+}
 
 .container {
-  background: #21a0a0;
+  background: $color-tertiary;
   width: 100vw;
   height: 100vh;
-
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -13,7 +30,97 @@
 }
 
 .content {
-  background-color: #fcfff7;
-  padding: 50px;
-  max-width: 400px;
+  background-color: $color-quaternary;
+  padding: calc($padding-base * 3);
+  border-radius: calc($border-radius);
+}
+
+.container-previewer {
+  display: grid;
+  grid-template-areas:
+    '. top_left_1 . . top_right_1 .'
+    'top_left_2 surface surface surface surface top_right_2'
+    '. surface surface surface surface .'
+    'bottom_left_1 surface surface surface surface bottom_right_1'
+    '. bottom_left_2 . . bottom_right_2 .';
+}
+
+.container-top-left-1 {
+  grid-area: top_left_1;
+  margin-bottom: calc($margin-base);
+}
+
+.container-top-left-2 {
+  grid-area: top_left_2;
+  margin-right: calc($margin-base);
+}
+
+.container-top-right-1 {
+  grid-area: top_right_1;
+  margin-bottom: calc($margin-base);
+}
+
+.container-top-right-2 {
+  grid-area: top_right_2;
+  margin-left: calc($margin-base);
+}
+
+.container-bottom-left-1 {
+  grid-area: bottom_left_1;
+  margin-right: calc($margin-base);
+}
+
+.container-bottom-left-2 {
+  grid-area: bottom_left_2;
+  margin-top: calc($margin-base);
+}
+
+.container-bottom-right-1 {
+  grid-area: bottom_right_1;
+  margin-left: calc($margin-base);
+}
+
+.container-bottom-right-2 {
+  grid-area: bottom_right_2;
+  margin-top: calc($margin-base);
+}
+
+.surface {
+  background: $color-primary;
+  border-top-left-radius: 1rem;
+  height: 300px;
+  width: 300px;
+  grid-area: surface;
+}
+
+.title-main {
+  font-size: calc($font-size * 2);
+  text-align: center;
+  padding-bottom: calc($padding-base * 3);
+  color: $color-primary;
+}
+
+.container-input {
+  width: 70px;
+
+  .input {
+    color: #d9534f;
+    display: block;
+    width: 100%;
+    padding: calc($padding-base / 2);
+    border-radius: calc($border-radius / 2);
+    font-family: $font-family;
+    font-weight: bolder;
+  }
+}
+
+.input {
+  border: 1px solid $color-secondary;
+  background-color: $color-secondary;
+  padding: calc($padding-base / 3);
+}
+
+.code-css {
+  color: $color-quaternary;
+  margin: calc($margin-base);
 }
