@@ -14,7 +14,7 @@ const inputBorderBottomRightY = document.querySelector('[data-radius=bottom-righ
 const surfaceBox = document.querySelector('[data-radius=surface]') as HTMLDivElement;
 
 const processCssCodeBorderRadius = ():void => {
-  const borderRadiusInOrder = `${inputBorderTopLeftX.value || 0}px ${inputBorderTopRightX.value || 0}px ${inputBorderBottomLeftX.value || 0}px ${inputBorderBottomRightX.value || 0}px / ${inputBorderTopLeftY.value || 0}px ${inputBorderTopRightY.value || 0}px ${inputBorderBottomLeftY.value || 0}px ${inputBorderBottomRightY.value || 0}px`;
+  const borderRadiusInOrder = `${inputBorderTopLeftX.value || 0}px ${inputBorderTopRightX.value || 0}px  ${inputBorderBottomRightX.value || 0}px ${inputBorderBottomLeftX.value || 0}px / ${inputBorderTopLeftY.value || 0}px ${inputBorderTopRightY.value || 0}px ${inputBorderBottomRightY.value || 0}px ${inputBorderBottomLeftY.value || 0}px`;
 
   surfaceBox.style.borderRadius = borderRadiusInOrder;
 };
