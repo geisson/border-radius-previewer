@@ -5,21 +5,56 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Typescript Webpack Starter</title>
+  <title>Border Radius Previewer</title>
 <script defer="defer" src="main.bundle.js"></script></head>
 
 <body>
   <div class="container">
     <div class="content">
-      <h2 class="title">Ola mundo!</h2>
-      <p class="text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt amet, minima, aperiam velit dolor at odio
-        veniam facere maxime magnam nemo perferendis tenetur praesentium voluptate repudiandae itaque possimus cumque?
-        Aliquam?
-      </p>
+      <h1 class="title-main">Border Radius Previewer</h1>
 
-      <input type="text" name="username" id="username" class="input-text" data-teste="nome">
-      <button class="btn" data-teste="btn"> clique! </button>
+      <div class="container-previewer" data-container="container-radius">
+        <div class="container-input container-top-left-x">
+          <input type="number" name="top-left-1" id="top-left-x" data-radius="top-left-x" class="input" aria-label="border top left x">
+        </div>
+
+        <div class="container-input container-top-left-y">
+          <input type="number" name="top-left-y" id="top-left-y" data-radius="top-left-y" class="input" aria-label="border top left y">
+        </div>
+
+        <div class="container-input container-top-right-x">
+          <input type="number" name="top-right-x" id="top-right-x" data-radius="top-right-x" class="input" aria-label="border top right x">
+        </div>
+
+        <div class="container-input container-top-right-y">
+          <input type="number" name="top-right-y" id="top-right-y" data-radius="top-right-y" class="input" aria-label="border top right y">
+        </div>
+
+        <div class="container-input container-bottom-left-x">
+          <input type="number" name="bottom-left-x" id="bottom-left-x" data-radius="bottom-left-x" class="input" aria-label="border bottom left x">
+        </div>
+
+        <div class="container-input container-bottom-left-y">
+          <input type="number" name="bottom-left-y" id="bottom-left-y" data-radius="bottom-left-y" class="input" aria-label="border bottom left y">
+        </div>
+
+        <div class="container-input container-bottom-right-x">
+          <input type="number" name="bottom-right-x" id="bottom-right-x" data-radius="bottom-right-x" class="input" aria-label="border bottom right x">
+        </div>
+
+        <div class="container-input container-bottom-right-y">
+          <input type="number" name="bottom-right-y" id="bottom-right-y" data-radius="bottom-right-y" class="input" aria-label="border bottom right y">
+        </div>
+
+        <div class="surface" data-radius="surface">
+          <div class="code-css" data-radius="code-css"></div>
+        </div>
+      </div>
+
+      <div class="container-code">
+        <input type="text" name="css-code" class="input" aria-label="Css Code" data-css="css-code">
+        <button data-button="copy-btn" class="btn">copy</button>
+      </div>
 
     </div>
   </div>
