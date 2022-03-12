@@ -13,10 +13,28 @@ const inputBorderBottomRightY = document.querySelector('[data-radius=bottom-righ
 
 const surfaceBox = document.querySelector('[data-radius=surface]') as HTMLDivElement;
 
+const inputCssCode = document.querySelector('[data-css=css-code]') as HTMLInputElement;
+const copyButton = document.querySelector('[data-button=copy-btn]') as HTMLButtonElement;
+
 const processCssCodeBorderRadius = ():void => {
-  const borderRadiusInOrder = `${inputBorderTopLeftX.value || 0}px ${inputBorderTopRightX.value || 0}px  ${inputBorderBottomRightX.value || 0}px ${inputBorderBottomLeftX.value || 0}px / ${inputBorderTopLeftY.value || 0}px ${inputBorderTopRightY.value || 0}px ${inputBorderBottomRightY.value || 0}px ${inputBorderBottomLeftY.value || 0}px`;
+  const borderRadiusInOrder:string = `${inputBorderTopLeftX.value || 0}px ${inputBorderTopRightX.value || 0}px  ${inputBorderBottomRightX.value || 0}px ${inputBorderBottomLeftX.value || 0}px / ${inputBorderTopLeftY.value || 0}px ${inputBorderTopRightY.value || 0}px ${inputBorderBottomRightY.value || 0}px ${inputBorderBottomLeftY.value || 0}px`;
 
   surfaceBox.style.borderRadius = borderRadiusInOrder;
+  inputCssCode.value = borderRadiusInOrder;
+};
+
+inputCssCode.readOnly = true;
+inputCssCode.classList.add('disabled');
+
+const copyCode = (): void => {
+  const isEmpty: boolean = !inputCssCode.value;
+  const { value } = inputCssCode;
+
+  if (isEmpty) return;
+
+  inputCssCode.select();
+  navigator.clipboard.writeText(value);
 };
 
 containerRadius.addEventListener('input', processCssCodeBorderRadius);
+copyButton.addEventListener('click', copyCode);

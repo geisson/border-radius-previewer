@@ -19,6 +19,79 @@ body {
   font-family: $font-family;
 }
 
+.title-main {
+  font-size: calc($font-size * 2);
+  text-align: center;
+  padding-bottom: calc($padding-base * 3);
+  color: $color-primary;
+}
+
+.input {
+  border: 1px solid $color-secondary;
+  background-color: $color-secondary;
+  color: #d9534f;
+  padding: calc($padding-base / 3);
+  display: block;
+  width: 100%;
+  padding: calc($padding-base / 2);
+  border-radius: calc($border-radius / 2);
+  font-family: $font-family;
+  font-weight: bolder;
+  outline: none !important;
+  transition: all 0.5s;
+
+  &:hover {
+    border: 1px solid darken($color: $color-secondary, $amount: 15);
+  }
+
+  &:focus {
+    border: 1px solid darken($color: $color-secondary, $amount: 30);
+  }
+
+  &.disabled {
+    background-color: lighten($color: $color-secondary, $amount: 10);
+    border: 1px solid $color-secondary;
+
+    &:hover {
+      background-color: lighten($color: $color-secondary, $amount: 10);
+      border: 1px solid $color-secondary;
+    }
+  }
+}
+
+.btn {
+  background-color: $color-primary;
+  border: none;
+  color: #ffeead;
+  font-size: calc($font-size * 1);
+  font-family: $font-family;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none !important;
+  transition: all 0.5s;
+
+  &:hover {
+    background-color: lighten($color: $color-primary, $amount: 10);
+  }
+
+  &:active,
+  &:focus {
+    background-color: darken($color: $color-primary, $amount: 10);
+  }
+}
+
+.tooltip {
+  background-color: $color-tertiary;
+  color: darken($color: $color-tertiary, $amount: 50);
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: calc($padding-base / 2);
+  border-radius: calc($border-radius / 2);
+  transition: all 0.5s;
+}
+
 .container {
   background: $color-tertiary;
   width: 100vw;
@@ -92,34 +165,30 @@ body {
   grid-area: surface;
 }
 
-.title-main {
-  font-size: calc($font-size * 2);
-  text-align: center;
-  padding-bottom: calc($padding-base * 3);
-  color: $color-primary;
-}
-
 .container-input {
   width: 70px;
-
-  .input {
-    color: #d9534f;
-    display: block;
-    width: 100%;
-    padding: calc($padding-base / 2);
-    border-radius: calc($border-radius / 2);
-    font-family: $font-family;
-    font-weight: bolder;
-  }
-}
-
-.input {
-  border: 1px solid $color-secondary;
-  background-color: $color-secondary;
-  padding: calc($padding-base / 3);
 }
 
 .code-css {
   color: $color-quaternary;
   margin: calc($margin-base);
+}
+
+.container-code {
+  display: grid;
+  grid-template: 'input input btn';
+  margin-top: calc($margin-base * 3);
+  position: relative;
+
+  .input {
+    grid-area: input;
+    padding: $padding-base;
+    font-size: calc($font-size);
+    border-radius: $border-radius 0 0 $border-radius;
+  }
+
+  .btn {
+    grid-area: btn;
+    border-radius: 0 $border-radius $border-radius 0;
+  }
 }
